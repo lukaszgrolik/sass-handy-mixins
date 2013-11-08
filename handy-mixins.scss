@@ -23,7 +23,7 @@
   margin-right: auto;
 }
 
-@mixin center-block($width, $padding: 0) {
+@mixin centered-area($width, $padding: 0) {
   max-width: $width;
   padding-left: $padding;
   padding-right: $padding;
