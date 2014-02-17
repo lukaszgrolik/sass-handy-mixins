@@ -109,6 +109,53 @@
   }
 }
 
+@mixin triangle($direction, $color, $size) {
+  width: 0;
+  height: 0;
+
+  $size-dir-1: null;
+  $size-dir-2: null;
+  $size-dir-3: null;
+
+  @if length($size) == 1 {
+    $size-dir-1: $size;
+    $size-dir-2: $size;
+    $size-dir-3: $size;
+  } @else if length($size) == 2 {
+    $size-dir-1: nth($size, 1);
+    $size-dir-2: nth($size, 2);
+    $size-dir-3: nth($size, 2);
+  } @else if length($size) == 3 {
+    $size-dir-1: nth($size, 1);
+    $size-dir-2: nth($size, 2);
+    $size-dir-3: nth($size, 3);
+  }
+ 
+  @if $direction == left {
+    border-right: $size-dir-1 solid $color;
+    border-top: $size-dir-2 solid transparent;
+    border-bottom: $size-dir-3 solid transparent;
+  }
+  
+  @else if $direction == right {
+    border-left: $size-dir-1 solid $color;
+    border-top: $size-dir-2 solid transparent;
+    border-bottom: $size-dir-3 solid transparent;
+  }
+  
+  @else if $direction == top {
+    border-bottom: $size-dir-1 solid $color;
+    border-left: $size-dir-2 solid transparent;
+    border-right: $size-dir-3 solid transparent;
+  }
+  
+  @else if $direction == bottom {
+    border-top: $size-dir-1 solid $color;
+    border-left: $size-dir-2 solid transparent;
+    border-right: $size-dir-3 solid transparent;
+  }
+}
+
 //
 
 @mixin generate-handy-classes {
