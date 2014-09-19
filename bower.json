@@ -1,6 +1,8 @@
 {
-  "name": "lukaszgrolik/sass-handy-mixins",
+  "name": "sass-handy-mixins",
   "version": "0.6.0",
+  "main": "_handy-mixins.scss",
   "description": "A collection of useful Sass mixins",
+  "keywords": ["sass-mixins", "sass-handy-mixins", "mixins", "helpers", "utils"],
   "license": "MIT"
 }
